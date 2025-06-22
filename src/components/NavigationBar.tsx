@@ -125,11 +125,28 @@ const NavigationBar = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-2 pt-2 border-t border-gray-200 dark:border-gray-700 mt-2">
-                <Button variant="outline" className="border-[#3AA1FF] text-[#3AA1FF] hover:bg-[#3AA1FF] hover:text-white w-full">
-                  {t.landingPage.navbar.login}
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-[#3AA1FF] text-[#3AA1FF] hover:bg-[#3AA1FF] hover:text-white w-full"
+                >
+                  <Link
+                    to="/auth?mode=login"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {t.landingPage.navbar.login}
+                  </Link>
                 </Button>
-                <Button className="bg-[#3AA1FF] hover:bg-[#2a90ef] text-white px-6 py-2 rounded-full font-semibold w-full">
-                  {t.landingPage.navbar.signup}
+                <Button
+                  asChild
+                  className="bg-[#3AA1FF] hover:bg-[#2a90ef] text-white px-6 py-2 rounded-full font-semibold w-full"
+                >
+                  <Link
+                    to="/auth?mode=register"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {t.landingPage.navbar.signup}
+                  </Link>
                 </Button>
               </div>
             </div>
