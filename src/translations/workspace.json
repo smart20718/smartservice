@@ -1,0 +1,40 @@
+{
+  "en": {
+    "sidebar": {
+      "home": "Home",
+      "settings": "Settings"
+    },
+    "settings": {
+      "title": "Settings",
+      "username": "Username",
+      "uploadAvatar": "Upload Avatar",
+      "saveChanges": "Save Changes",
+      "darkMode": "Dark Mode",
+      "language": "Language"
+    },
+    "chatbot": {
+      "startTitle": "Start a conversation",
+      "startSubtitle": "Ask questions or upload documents to get instant AI-powered answers.",
+      "inputPlaceholder": "Type a message or upload a file..."
+    }
+  },
+  "fr": {
+    "sidebar": {
+      "home": "Accueil",
+      "settings": "Paramètres"
+    },
+    "settings": {
+      "title": "Paramètres",
+      "username": "Nom d'utilisateur",
+      "uploadAvatar": "Télécharger un avatar",
+      "saveChanges": "Sauvegarder les modifications",
+      "darkMode": "Mode sombre",
+      "language": "Langue"
+    },
+    "chatbot": {
+      "startTitle": "Commencez une conversation",
+      "startSubtitle": "Posez des questions ou téléchargez des documents pour obtenir des réponses instantanées basées sur l'IA.",
+      "inputPlaceholder": "Tapez un message ou téléchargez un fichier..."
+    }
+  }
+} 

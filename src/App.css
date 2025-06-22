@@ -1,0 +1,130 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Remove the root padding for our full-width layout */
+@media (min-width: 768px) {
+  #root {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Navbar logo animation */
+.navbar-logo {
+  transition: all 0.3s ease;
+}
+
+.navbar-logo:hover {
+  filter: drop-shadow(0 0 10px rgba(58, 161, 255, 0.8));
+  transform: scale(1.05);
+}
+
+@keyframes logo-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.navbar-logo-pulse {
+  animation: logo-pulse 3s ease-in-out infinite;
+}
+
+/* CSS variables for color scheme */
+:root {
+  --color-primary: #3AA1FF;
+  --color-primary-dark: #2a90ef;
+  --color-secondary: #8E33FF;
+  --color-dark: #0A1F44;
+  --color-light: #E6F1FF;
+  --color-gray: #f1f5f9;
+  --color-white: #FFFFFF;
+  --color-cyan-500: #06b6d4;
+  --color-purple-500: #8b5cf6;
+}
+
+/* Grid animation for features section */
+@keyframes grid-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+/* 3D Card effects */
+.group:hover .group-hover\:rotate-y-12 {
+  transform: rotateY(12deg);
+}
+
+/* Fade in animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+.delay-1000 {
+  animation-delay: 1000ms;
+}

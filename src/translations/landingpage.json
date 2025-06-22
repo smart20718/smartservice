@@ -1,0 +1,312 @@
+{
+  "en": {
+    "navbar": {
+      "home": "Home",
+      "features": "Features",
+      "about": "About",
+      "contact": "Contact",
+      "login": "Login",
+      "signup": "Sign Up",
+      "language": "Language",
+      "demo": "Demo",
+      "engine": "AI Engine"
+    },
+    "hero": {
+      "title": "Smart Service Zenith AI",
+      "subtitle": "Your intelligent assistant powered by Google's Gemini technology. Upload documents, ask questions, and get instant AI-powered insights.",
+      "startChatting": "Start Chatting",
+      "seeDemo": "See Demo",
+      "hideDemo": "Hide Demo",
+      "exploreMore": "Explore More",
+      "typewriter": [
+        "Transform your business with AI",
+        "Intelligent document management system",
+        "Analyze documents with ChatGPT",
+        "Automate your workflow",
+        "Secure & reliable document storage"
+      ]
+    },
+    "demo": {
+      "title": "Demo: Document Analysis with OCR",
+      "ocrProcessing": "OCR Processing",
+      "demoMessages": {
+        "user1": "Can you analyze this invoice and tell me the total amount?",
+        "assistant1": "I've analyzed the invoice image. The total amount is $1,249.99. It's from TechSupplies Inc., dated March 15, 2023, with invoice #INV-20230315. Would you like me to extract any other information?",
+        "user2": "What items were purchased?",
+        "assistant2": "Based on the invoice, these items were purchased:\n\n1. Laptop Pro X1 - $899.99 (1 unit)\n2. Extended Warranty - $149.99 (1 unit)\n3. Wireless Mouse - $49.99 (1 unit)\n4. USB-C Hub - $59.99 (2 units)\n\nSubtotal: $1,159.95\nTax (7.75%): $89.90\nTotal: $1,249.99"
+      }
+    },
+    "features": {
+      "title": "Key Features",
+      "documentAnalysis": {
+        "title": "Intelligent Document Analysis",
+        "description": "Upload documents and images to extract text using OCR powered by Gemini Vision. Our AI can read and understand content from various file formats."
+      },
+      "conversations": {
+        "title": "Natural Conversations",
+        "description": "Chat naturally with our AI assistant that understands context and provides helpful, accurate responses to your questions."
+      },
+      "voice": {
+        "title": "Voice Interaction",
+        "description": "Record audio messages and get instant responses. Perfect for hands-free operation and accessibility.",
+        "alerts": {
+          "title": "Smart Alerts",
+          "description": "Stay informed with intelligent alerts when documents are uploaded, modified, or contracts are about to expire."
+        }
+      },
+      "search": {
+        "title": "Smart Document Search",
+        "description": "Find information across your documents quickly with semantic search capabilities that understand the meaning behind your queries.",
+        "alerts": {
+          "title": "Smart Alerts",
+          "description": "Stay informed with intelligent alerts when documents are uploaded, modified, or contracts are about to expire."
+        }
+      }
+    },
+    "capabilities": {
+      "title": "AI Engine & Security",
+      "tabs": {
+        "ocr": "OCR & Vision",
+        "chat": "Chat",
+        "voice": "Voice",
+        "search": "Search"
+      },
+      "ocr": {
+        "title": "Optical Character Recognition",
+        "description": "Our advanced OCR system powered by Gemini Vision can extract text from:",
+        "items": [
+          "Scanned Documents",
+          "Invoices & Receipts",
+          "Business Cards",
+          "Handwritten Notes",
+          "Screenshots",
+          "Photos of Text"
+        ],
+        "fileTypes": "Supported File Types",
+        "imageAnalysis": {
+          "title": "Image Analysis",
+          "description": "Beyond text extraction, our AI can understand image content, identify objects, and describe visual elements."
+        }
+      },
+      "chat": {
+        "title": "Conversational AI",
+        "description": "Engage in natural conversations with our AI assistant powered by Google's Gemini 2.0 technology:",
+        "contextAwareness": {
+          "title": "Context Awareness",
+          "description": "Our AI remembers conversation history and maintains context throughout your chat session."
+        },
+        "documentQA": {
+          "title": "Document Q&A",
+          "description": "Ask specific questions about your uploaded documents and get precise answers."
+        },
+        "realTime": {
+          "title": "Real-time Responses",
+          "description": "Get instant answers with our streaming response technology that shows results as they're generated."
+        },
+        "multilingual": {
+          "title": "Multilingual Support",
+          "description": "Communicate in multiple languages with our AI that understands and responds in your preferred language."
+        }
+      },
+      "voice": {
+        "title": "Voice Interaction",
+        "description": "Communicate with our AI using your voice for a hands-free experience:",
+        "recording": {
+          "title": "Voice Recording",
+          "description": "Record voice messages directly in the chat interface with a single click."
+        },
+        "processing": {
+          "title": "Audio Processing",
+          "description": "Our AI can process audio files and respond to questions about their content."
+        },
+        "accessibility": {
+          "title": "Accessibility",
+          "description": "Voice interaction makes our AI accessible to users with different needs and preferences."
+        },
+        "alerts": {
+          "title": "Smart Alerts",
+          "description": "Stay informed with intelligent alerts when documents are uploaded, modified, or contracts are about to expire."
+        }
+      },
+      "search": {
+        "title": "Smart Document Search",
+        "description": "Quickly find information across your documents with our intelligent search capabilities:",
+        "semantic": {
+          "title": "Semantic Search",
+          "description": "Our AI understands the meaning behind your search queries, not just keywords, providing more relevant results."
+        },
+        "crossDocument": {
+          "title": "Cross-Document Analysis",
+          "description": "Search across multiple documents at once to find connections and insights that might otherwise be missed."
+        },
+        "alerts": {
+          "title": "Smart Alerts",
+          "description": "Stay informed with intelligent alerts when documents are uploaded, modified, or contracts are about to expire."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Experience the Future?",
+      "description": "Start chatting with our AI assistant now and discover how it can help streamline your workflow, answer questions, and analyze your documents.",
+      "button": "Start Chatting Now"
+    },
+    "aboutSection": {
+      "title": "Smart AI Capabilities"
+    }
+  },
+  "fr": {
+    "navbar": {
+      "home": "Accueil",
+      "features": "Fonctionnalités",
+      "about": "À propos",
+      "contact": "Contact",
+      "login": "Connexion",
+      "signup": "S'inscrire",
+      "language": "Langue",
+      "demo": "Démo",
+      "engine": "AI Engine"
+    },
+    "hero": {
+      "title": "Smart Service Zenith AI",
+      "subtitle": "Votre assistant intelligent propulsé par la technologie Gemini de Google. Téléchargez des documents, posez des questions et obtenez instantanément des analyses alimentées par l'IA.",
+      "startChatting": "Commencer à discuter",
+      "seeDemo": "Voir la démo",
+      "hideDemo": "Masquer la démo",
+      "exploreMore": "Explorer plus",
+      "typewriter": [
+        "Transformez votre entreprise avec l'IA",
+        "Système intelligent de gestion de documents",
+        "Analysez les documents avec ChatGPT",
+        "Automatisez votre flux de travail",
+        "Stockage de documents sécurisé et fiable"
+      ]
+    },
+    "demo": {
+      "title": "Démo : Analyse de documents avec OCR",
+      "ocrProcessing": "Traitement OCR",
+      "demoMessages": {
+        "user1": "Pouvez-vous analyser cette facture et me dire le montant total ?",
+        "assistant1": "J'ai analysé l'image de la facture. Le montant total est de 1 249,99 €. Elle provient de TechSupplies Inc., datée du 15 mars 2023, avec le numéro de facture #INV-20230315. Souhaitez-vous que j'extraie d'autres informations ?",
+        "user2": "Quels articles ont été achetés ?",
+        "assistant2": "D'après la facture, ces articles ont été achetés :\n\n1. Laptop Pro X1 - 899,99 € (1 unité)\n2. Garantie prolongée - 149,99 € (1 unité)\n3. Souris sans fil - 49,99 € (1 unité)\n4. Hub USB-C - 59,99 € (2 unités)\n\nSous-total : 1 159,95 €\nTVA (20%) : 231,99 €\nTotal : 1 249,99 €"
+      }
+    },
+    "features": {
+      "title": "Fonctionnalités clés",
+      "documentAnalysis": {
+        "title": "Analyse intelligente de documents",
+        "description": "Téléchargez des documents et des images pour extraire du texte à l'aide de l'OCR alimenté par Gemini Vision. Notre IA peut lire et comprendre le contenu de divers formats de fichiers."
+      },
+      "conversations": {
+        "title": "Conversations naturelles",
+        "description": "Discutez naturellement avec notre assistant IA qui comprend le contexte et fournit des réponses utiles et précises à vos questions."
+      },
+      "voice": {
+        "title": "Interaction vocale",
+        "description": "Enregistrez des messages audio et obtenez des réponses instantanées. Parfait pour une utilisation mains libres et l'accessibilité.",
+        "alerts": {
+          "title": "Alertes intelligentes",
+          "description": "Restez informé grâce à des alertes intelligentes lorsqu'un document est téléchargé, modifié ou lorsqu'un contrat arrive à expiration."
+        }
+      },
+      "search": {
+        "title": "Recherche intelligente de documents",
+        "description": "Trouvez rapidement des informations dans vos documents grâce à des capacités de recherche sémantique qui comprennent le sens de vos requêtes.",
+        "alerts": {
+          "title": "Alertes intelligentes",
+          "description": "Restez informé grâce à des alertes intelligentes lorsqu'un document est téléchargé, modifié ou lorsqu'un contrat arrive à expiration."
+        }
+      }
+    },
+    "capabilities": {
+      "title": "AI Engine & Security",
+      "tabs": {
+        "ocr": "OCR & Vision",
+        "chat": "Discussion",
+        "voice": "Voix",
+        "search": "Recherche"
+      },
+      "ocr": {
+        "title": "Reconnaissance optique de caractères",
+        "description": "Notre système OCR avancé alimenté par Gemini Vision peut extraire du texte à partir de :",
+        "items": [
+          "Documents numérisés",
+          "Factures et reçus",
+          "Cartes de visite",
+          "Notes manuscrites",
+          "Captures d'écran",
+          "Photos de texte"
+        ],
+        "fileTypes": "Types de fichiers pris en charge",
+        "imageAnalysis": {
+          "title": "Analyse d'image",
+          "description": "Au-delà de l'extraction de texte, notre IA peut comprendre le contenu des images, identifier des objets et décrire des éléments visuels."
+        }
+      },
+      "chat": {
+        "title": "IA conversationnelle",
+        "description": "Engagez des conversations naturelles avec notre assistant IA propulsé par la technologie Gemini 2.0 de Google :",
+        "contextAwareness": {
+          "title": "Conscience du contexte",
+          "description": "Notre IA se souvient de l'historique des conversations et maintient le contexte tout au long de votre session de discussion."
+        },
+        "documentQA": {
+          "title": "Questions-réponses sur documents",
+          "description": "Posez des questions spécifiques sur vos documents téléchargés et obtenez des réponses précises."
+        },
+        "realTime": {
+          "title": "Réponses en temps réel",
+          "description": "Obtenez des réponses instantanées grâce à notre technologie de streaming qui affiche les résultats au fur et à mesure de leur génération."
+        },
+        "multilingual": {
+          "title": "Support multilingue",
+          "description": "Communiquez en plusieurs langues avec notre IA qui comprend et répond dans votre langue préférée."
+        }
+      },
+      "voice": {
+        "title": "Interaction vocale",
+        "description": "Communiquez avec notre IA en utilisant votre voix pour une expérience mains libres :",
+        "recording": {
+          "title": "Enregistrement vocal",
+          "description": "Enregistrez des messages vocaux directement dans l'interface de chat d'un simple clic."
+        },
+        "processing": {
+          "title": "Traitement audio",
+          "description": "Notre IA peut traiter des fichiers audio et répondre à des questions sur leur contenu."
+        },
+        "accessibility": {
+          "title": "Accessibilité",
+          "description": "L'interaction vocale rend notre IA accessible aux utilisateurs ayant différents besoins et préférences."
+        },
+        "alerts": {
+          "title": "Alertes intelligentes",
+          "description": "Restez informé grâce à des alertes intelligentes lorsqu'un document est téléchargé, modifié ou lorsqu'un contrat arrive à expiration."
+        }
+      },
+      "search": {
+        "title": "Recherche intelligente de documents",
+        "description": "Trouvez rapidement des informations dans vos documents grâce à nos capacités de recherche intelligentes :",
+        "semantic": {
+          "title": "Recherche sémantique",
+          "description": "Notre IA comprend le sens derrière vos requêtes de recherche, pas seulement les mots-clés, fournissant des résultats plus pertinents."
+        },
+        "crossDocument": {
+          "title": "Analyse inter-documents",
+          "description": "Recherchez dans plusieurs documents à la fois pour trouver des connexions et des insights qui pourraient autrement être manqués."
+        },
+        "alerts": {
+          "title": "Alertes intelligentes",
+          "description": "Restez informé grâce à des alertes intelligentes lorsqu'un document est téléchargé, modifié ou lorsqu'un contrat arrive à expiration."
+        }
+      }
+    },
+    "cta": {
+      "title": "Prêt à vivre le futur ?",
+      "description": "Commencez à discuter avec notre assistant IA maintenant et découvrez comment il peut vous aider à rationaliser votre flux de travail, répondre à vos questions et analyser vos documents.",
+      "button": "Commencer à discuter maintenant"
+    },
+    "aboutSection": {
+      "title": "Capacités de l'IA intelligente"
+    }
+  }
+}
