@@ -128,16 +128,8 @@ const HeroSection = () => {
                 </Button>
               </div>
               
-              <div className="mt-6 border-t border-white/10 pt-4 flex flex-col sm:flex-row sm:items-center gap-2 w-full">
-                <div className="flex-1">
-                  <p className="text-sm font-semibold text-white">Project partners</p>
-                  <div className="mt-1 text-xs sm:text-sm space-y-0.5">
-                    <p className="text-[#3AA1FF] font-medium">• Aifa&nbsp;Lamiaa</p>
-                    <p className="text-[#8E33FF] font-medium">• Benmira&nbsp;Lyakout</p>
-                  </div>
-                </div>
-                <div className="hidden sm:block h-10 w-px bg-white/10" />
-                <div className="flex items-center justify-center sm:justify-start gap-2">
+              <div className="mt-6 border-t border-white/10 pt-4 flex items-center justify-center">
+                <div className="flex items-center justify-center gap-2">
                   <img src="/Smart_service_logo.png" alt="Logo" className="w-8 h-8 rounded-full shadow-md" />
                 </div>
               </div>
