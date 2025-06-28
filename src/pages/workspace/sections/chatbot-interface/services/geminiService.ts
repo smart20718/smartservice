@@ -88,8 +88,8 @@ export const sendMessageStream = async (
     }
 
     const systemText = preferredLang === 'fr'
-      ? 'Vous êtes Smart Service Zenith AI, un chatbot utile et amical dédié à répondre aux questions des utilisateurs avec clarté et précision. Répondez uniquement en français.'
-      : 'You are Smart Service Zenith AI, a helpful and friendly chatbot dedicated to answering user questions with clarity and precision.';
+      ? 'Vous êtes Smart Service, un chatbot utile et amical dédié à répondre aux questions des utilisateurs avec clarté et précision. Répondez uniquement en français.'
+      : 'You are Smart Service, a helpful and friendly chatbot dedicated to answering user questions with clarity and precision.';
 
     const response = await ai.models.generateContentStream({
       model: GEMINI_MODEL,
