@@ -12,7 +12,7 @@
       "engine": "AI Engine"
     },
     "hero": {
-      "title": "Smart Service Zenith AI",
+      "title": "Smart Service",
       "subtitle": "Your intelligent assistant powered by Google's Gemini technology. Upload documents, ask questions, and get instant AI-powered insights.",
       "startChatting": "Start Chatting",
       "seeDemo": "See Demo",
@@ -151,7 +151,7 @@
       "button": "Start Chatting Now"
     },
     "aboutSection": {
-      "title": "Smart AI Capabilities"
+      "title": "Smart Service Capabilities"
     }
   },
   "fr": {
@@ -167,7 +167,7 @@
       "engine": "AI Engine"
     },
     "hero": {
-      "title": "Smart Service Zenith AI",
+      "title": "Smart Service",
       "subtitle": "Votre assistant intelligent propulsé par la technologie Gemini de Google. Téléchargez des documents, posez des questions et obtenez instantanément des analyses alimentées par l'IA.",
       "startChatting": "Commencer à discuter",
       "seeDemo": "Voir la démo",
@@ -306,7 +306,7 @@
       "button": "Commencer à discuter maintenant"
     },
     "aboutSection": {
-      "title": "Capacités de l'IA intelligente"
+      "title": "Capacités de Smart Service"
     }
   }
 }
