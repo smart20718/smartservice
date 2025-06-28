@@ -81,8 +81,8 @@ const HeroSection = () => {
             </div>
             
             <h1 className="font-tech text-5xl font-bold text-white sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight">
-              {t.landingPage.hero.title.split(' ')[0]} <span className="text-cyber font-bold relative">
-                {t.landingPage.hero.title.split(' ').slice(1).join(' ')}
+              Smart <span className="text-cyber font-bold relative">
+                Service
                 <span className="absolute bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#3AA1FF] to-[#8E33FF] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-bottom-left"></span>
               </span>
             </h1>
