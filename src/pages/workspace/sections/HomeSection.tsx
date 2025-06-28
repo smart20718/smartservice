@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ImageCarousel from "@/components/ImageCarousel.tsx"; // Adjust the path based on where you save the carousel file
 import { 
   BookOpen, 
   BarChart3, 
@@ -86,6 +87,7 @@ const HomeSection: React.FC<Props> = ({ onNavigate }) => {
 
   return (
     <div className={`max-w-6xl mx-auto flex flex-col gap-10 pb-10 ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>
+      <ImageCarousel theme={theme} />
       {/* Welcome hero panel */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
