@@ -86,7 +86,7 @@ const AIEngineSection = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-10 mb-20">
           <div className="w-full md:w-1/2">
             <div className="relative mb-8">
-              <span className="inline-block py-1 px-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-full mb-4">SMART SERVICE AI</span>
+              <span className="inline-block py-1 px-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold rounded-full mb-4">SMART SERVICE</span>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-tech font-bold text-white mb-6 leading-tight">
                 {t.landingPage.capabilities.title}
               </h2>

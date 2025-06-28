@@ -87,7 +87,7 @@ const DialogSection = () => {
                     
                     <div className="flex items-center space-x-3 mb-4 relative z-10">
                       <div className="w-3 h-3 bg-[#3AA1FF] rounded-full animate-pulse"></div>
-                      <span className="text-sm font-semibold text-[#0A1F44]">Smart Service AI</span>
+                      <span className="text-sm font-semibold text-[#0A1F44]">Smart Service</span>
                       {typingIndex === index && (
                         <div className="flex space-x-1">
                           <div className="w-1 h-1 bg-[#3AA1FF] rounded-full animate-bounce"></div>
