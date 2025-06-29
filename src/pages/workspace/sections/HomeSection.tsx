@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/inputs/button";
 import { Card } from "@/components/ui/data-display/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/navigation/tabs";
 import { useLanguage } from "@/contexts/LanguageContext";
+import ImageCarousel from "@/components/ImageCarousel";
 
 type Props = {
   onNavigate: (section: "home" | "chat") => void;
@@ -86,6 +87,7 @@ const HomeSection: React.FC<Props> = ({ onNavigate }) => {
 
   return (
     <div className={`max-w-6xl mx-auto flex flex-col gap-10 pb-10 ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>
+       <ImageCarousel theme={theme} />
       {/* Welcome hero panel */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
