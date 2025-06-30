@@ -265,7 +265,7 @@ const AIEngineSection = () => {
       <div className="absolute bottom-0 left-0 w-full">
         <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full h-20 fill-[#0A1F44]">
           <path d="M0,64 C288,104 480,16 720,16 C960,16 1152,104 1440,64 L1440,120 L0,120 Z" className="fill-[#0A1F44]"></path>
-          <path d="M0,64 C288,89 480,42 720,42 C960,42 1152,89 1440,64 L1440,120 L0,120 Z" className="fill-[#0A1F44] opacity-50"></path>
+          <path d="M0,6ù4 C288,89 480,42 720,42 C960,42 1152,89 1440,64 L1440,120 L0,120 Z" className="fill-[#0A1F44] opacity-50"></path>
         </svg>
       </div>
     </section>
