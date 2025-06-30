@@ -251,6 +251,8 @@ const HeroSection = () => {
                   asChild
                   size="lg"
                   className="bg-gradient-to-r from-[#3AA1FF] to-[#8E33FF] hover:opacity-90 hover:scale-[1.02] text-white flex-1 py-6 rounded-xl text-lg font-semibold transition-all duration-300 focus:ring-2 focus:ring-[#3AA1FF] focus:ring-offset-2 focus:ring-offset-black"
+                  variant="default"
+                  onClick={() => {}}
                 >
                   <div>
                     <MessageSquare className="mr-2 h-5 w-5" />
@@ -258,6 +260,7 @@ const HeroSection = () => {
                   </div>
                 </Button>
                 <Button
+                  asChild
                   variant="outline"
                   size="lg"
                   className="border-gray-600 hover:bg-gray-800 text-white hover:text-white transition-all duration-300 focus:ring-2 focus:ring-gray-400"
