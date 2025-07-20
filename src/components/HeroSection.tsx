@@ -1,4 +1,5 @@
 import { Play, ChevronDown, FileText, Zap, MessageSquare, Files, FileCheck, FileEdit, ScanLine, Database, Shield, Search, BarChart3, Users, User, UserCheck } from "lucide-react";
+import React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 
 // Mock components and hooks for demonstration
@@ -8,7 +9,14 @@ const Button = ({ children, asChild, size, className, variant, onClick, ...props
   const variantClasses = variant === "outline" ? "border border-input hover:bg-accent hover:text-accent-foreground" : "";
   
   if (asChild) {
-    return <div className={`${baseClasses} ${sizeClasses} ${variantClasses} ${className}`} {...props}>{children}</div>;
+    // When asChild is true, apply props to the child
+    // Assuming the first child is the target for props like onClick
+    const child = React.Children.only(children); // Ensure only one child
+    return React.cloneElement(child, {
+      className: `${baseClasses} ${sizeClasses} ${variantClasses} ${className} ${child.props.className || ''}`,
+      onClick: onClick || child.props.onClick, // Prioritize Button's onClick, then child's
+      ...props
+    });
   }
   
   return (
@@ -25,39 +33,57 @@ const Button = ({ children, asChild, size, className, variant, onClick, ...props
 const TypewriterEffectSmooth = ({ words, className, cursorClassName }) => {
   const [displayText, setDisplayText] = useState("");
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [currentCharIndex, setCurrentCharIndex] = useState(0);
+  const [currentCharIndex, setCurrentCharIndex] = useState(0); // Corrected typo here
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     if (!words || words.length === 0) return;
 
-    const timer = setTimeout(() => {
-      const currentWord = words[currentWordIndex];
-      
-      if (!isDeleting) {
-        if (currentCharIndex < currentWord.text.length) {
-          setDisplayText(prev => prev + currentWord.text[currentCharIndex]);
-          setCurrentCharIndex(prev => prev + 1);
+    const currentWord = words[currentWordIndex];
+    
+    // Logic for typing and deleting
+    if (!isDeleting) {
+      if (currentCharIndex < currentWord.text.length) {
+        // Typing
+        const timer = setTimeout(() => {
+          setDisplayText((prev) => prev + currentWord.text[currentCharIndex]);
+          setCurrentCharIndex((prev) => prev + 1); // Using corrected state setter
+        }, 100);
+        return () => clearTimeout(timer);
+      } else {
+        // Word finished, move to next word or start deleting
+        if (currentWordIndex < words.length - 1) {
+          const timer = setTimeout(() => {
+            setDisplayText(prev => prev + " "); // Add space before next word
+            setCurrentWordIndex((prev) => prev + 1);
+            setCurrentCharIndex(0); // Reset char index
+          }, 500); // Pause before next word
+          return () => clearTimeout(timer);
         } else {
-          if (currentWordIndex < words.length - 1) {
-            setDisplayText(prev => prev + " ");
-            setCurrentWordIndex(prev => prev + 1);
+          // Last word finished, loop back or stop
+          const timer = setTimeout(() => {
+            setIsDeleting(true); // Can implement deleting here, but for smooth effect,
+                                 // we'll just cycle to the next phrase
+            setCurrentWordIndex(0); // Loop back to the first word
             setCurrentCharIndex(0);
-          }
+            setDisplayText(''); // Clear display text
+            setIsDeleting(false); // Reset deleting state
+          }, 2000); // Pause before restarting
+          return () => clearTimeout(timer);
         }
       }
-    }, 100);
-
-    return () => clearTimeout(timer);
+    }
   }, [currentWordIndex, currentCharIndex, isDeleting, words]);
+
 
   return (
     <div className={className}>
       <span className="text-2xl sm:text-3xl lg:text-4xl font-normal">
-        {words?.map((word, idx) => (
+        {/* Adjusted display logic for TypewriterEffectSmooth */}
+        {words.slice(0, currentWordIndex + 1).map((word, idx) => (
           <span key={idx} className={word.className}>
-            {idx <= currentWordIndex ? (idx === currentWordIndex ? displayText.split(' ').pop() : word.text) : ''}
-            {idx < words.length - 1 && idx < currentWordIndex ? ' ' : ''}
+            {idx === currentWordIndex ? displayText : word.text}
+            {idx < currentWordIndex && ' '} {/* Add space between completed words */}
           </span>
         ))}
         <span className={`${cursorClassName} inline-block w-0.5 h-6 ml-1 animate-pulse`}>|</span>
@@ -66,71 +92,106 @@ const TypewriterEffectSmooth = ({ words, className, cursorClassName }) => {
   );
 };
 
+
 // Human figure component
 const HumanFigure = ({ className, isActive, action }) => {
   const baseClasses = `transition-all duration-700 ${isActive ? 'scale-110 opacity-100' : 'scale-100 opacity-70'}`;
   
   return (
     <div className={`${baseClasses} ${className}`}>
-      <svg viewBox="0 0 100 120" className="w-full h-full">
+      <svg viewBox="0 0 100 120" className="w-full h-full" fill="currentColor">
         {/* Head */}
-        <circle cx="50" cy="15" r="8" fill="currentColor" className="drop-shadow-sm" />
+        <circle cx="50" cy="15" r="8" className="drop-shadow-sm" />
         
         {/* Body */}
-        <rect x="45" y="23" width="10" height="25" rx="2" fill="currentColor" />
+        <rect x="45" y="23" width="10" height="25" rx="2" />
         
         {/* Arms */}
         <rect 
-          x="35" y="28" width="8" height="3" rx="1.5" fill="currentColor"
+          x="35" y="28" width="8" height="3" rx="1.5" 
           className={`origin-right transition-transform duration-500 ${
-            action === 'scanning' ? 'rotate-12 animate-pulse' : 
-            action === 'typing' ? 'animate-bounce' : 
+            action === 'scanning' ? 'animate-[arm-scan-left_1.5s_infinite_alternate]' : 
+            action === 'typing' ? 'animate-[arm-type-left_0.5s_infinite_alternate]' : 
             action === 'organizing' ? 'rotate-45' : ''
           }`}
         />
         <rect 
-          x="57" y="28" width="8" height="3" rx="1.5" fill="currentColor"
+          x="57" y="28" width="8" height="3" rx="1.5" 
           className={`origin-left transition-transform duration-500 ${
-            action === 'scanning' ? '-rotate-12 animate-pulse' : 
-            action === 'typing' ? 'animate-bounce' : 
+            action === 'scanning' ? 'animate-[arm-scan-right_1.5s_infinite_alternate]' : 
+            action === 'typing' ? 'animate-[arm-type-right_0.5s_infinite_alternate]' : 
             action === 'organizing' ? '-rotate-45' : ''
           }`}
         />
         
-        {/* Legs */}
-        <rect x="47" y="48" width="3" height="20" rx="1.5" fill="currentColor" />
-        <rect x="52" y="48" width="3" height="20" rx="1.5" fill="currentColor" />
+        {/* Legs - static, no complex animation needed for this view */}
+        <rect x="47" y="48" width="3" height="20" rx="1.5" />
+        <rect x="52" y="48" width="3" height="20" rx="1.5" />
         
         {/* Interactive elements based on action */}
         {action === 'scanning' && (
-          <g className="animate-pulse">
+          <g>
             <rect x="25" y="35" width="12" height="8" rx="1" fill="white" opacity="0.8" />
             <line x1="25" y1="37" x2="37" y2="37" stroke="currentColor" strokeWidth="0.5" />
             <line x1="25" y1="39" x2="35" y2="39" stroke="currentColor" strokeWidth="0.5" />
             <line x1="25" y1="41" x2="37" y2="41" stroke="currentColor" strokeWidth="0.5" />
+            {/* Simple scan line */}
+            <line x1="25" y1="35" x2="25" y2="43" stroke="cyan" strokeWidth="1" className="animate-[scan-line_1.5s_infinite]" />
           </g>
         )}
         
         {action === 'typing' && (
           <g>
             <rect x="35" y="40" width="30" height="6" rx="1" fill="white" opacity="0.8" />
-            <rect x="37" y="42" width="2" height="2" rx="0.5" fill="currentColor" className="animate-pulse" />
-            <rect x="40" y="42" width="2" height="2" rx="0.5" fill="currentColor" />
-            <rect x="43" y="42" width="2" height="2" rx="0.5" fill="currentColor" />
+            <circle cx="37" cy="42.5" r="0.8" fill="currentColor" className="animate-[key-press_0.5s_infinite_alternate_0s]" />
+            <circle cx="40" cy="42.5" r="0.8" fill="currentColor" className="animate-[key-press_0.5s_infinite_alternate_0.1s]" />
+            <circle cx="43" cy="42.5" r="0.8" fill="currentColor" className="animate-[key-press_0.5s_infinite_alternate_0.2s]" />
           </g>
         )}
         
         {action === 'organizing' && (
           <g>
-            <rect x="65" y="25" width="8" height="10" rx="1" fill="white" opacity="0.9" className="animate-bounce" />
-            <rect x="68" y="38" width="8" height="10" rx="1" fill="white" opacity="0.7" />
-            <rect x="71" y="51" width="8" height="10" rx="1" fill="white" opacity="0.5" />
+            <rect x="65" y="25" width="8" height="10" rx="1" fill="white" opacity="0.9" className="animate-[float-up_1.5s_infinite_alternate_0s]" />
+            <rect x="68" y="38" width="8" height="10" rx="1" fill="white" opacity="0.7" className="animate-[float-up_1.5s_infinite_alternate_0.5s]" />
+            <rect x="71" y="51" width="8" height="10" rx="1" fill="white" opacity="0.5" className="animate-[float-up_1.5s_infinite_alternate_1s]" />
           </g>
         )}
       </svg>
+      {/* Tailwind CSS Keyframes for animations */}
+      <style>{`
+        @keyframes arm-scan-left {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(12deg); }
+        }
+        @keyframes arm-scan-right {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(-12deg); }
+        }
+        @keyframes arm-type-left {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-1px); }
+        }
+        @keyframes arm-type-right {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-1px); }
+        }
+        @keyframes key-press {
+          0%, 100% { transform: translateY(0); opacity: 1; }
+          50% { transform: translateY(0.5px); opacity: 0.7; }
+        }
+        @keyframes scan-line {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(12px); }
+        }
+        @keyframes float-up {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-3px); }
+        }
+      `}</style>
     </div>
   );
 };
+
 
 // Carousel data
 const carouselData = [
@@ -385,22 +446,30 @@ const HeroSection = () => {
                   size="lg"
                   className="bg-gradient-to-r from-[#3AA1FF] to-[#8E33FF] hover:opacity-90 hover:scale-[1.02] text-white flex-1 py-6 rounded-xl text-lg font-semibold transition-all duration-300 focus:ring-2 focus:ring-[#3AA1FF] focus:ring-offset-2 focus:ring-offset-black"
                   variant="default"
-                  onClick={() => {}}
+                  onClick={() => {}} // Dummy onClick to satisfy the type, actual click handled by <a>
                 >
-                  <div>
+                  <a href="#contact" // Changed to 'a' tag to correctly handle navigation
+                    className="flex items-center justify-center w-full h-full" // Ensure the link fills the button area
+                    onClick={() => { scrollToSection('contact'); }} // The onClick now correctly targets the <a> tag
+                  >
                     <MessageSquare className="mr-2 h-5 w-5" />
                     {t.landingPage.hero.startChatting}
-                  </div>
+                  </a>
                 </Button>
                 <Button
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-gray-600 hover:bg-gray-800 text-white hover:text-white transition-all duration-300 focus:ring-2 focus:ring-gray-400"
-                  onClick={() => scrollToSection('about')}
+                  className="border-gray-600 hover:bg-gray-800 text-white hover:text-white transition-all duration-300 focus:ring-2 focus:ring-gray-400" 
+                  onClick={() => {}} // Dummy onClick to satisfy the type, actual click handled by <a>
                 >
-                  <ChevronDown className="mr-2 h-4 w-4" />
-                  {t.landingPage.hero.exploreMore}
+                  <a href="#about" // Changed to 'a' tag
+                    className="flex items-center justify-center w-full h-full"
+                    onClick={() => scrollToSection('about')} // The onClick now correctly targets the <a> tag
+                  >
+                    <ChevronDown className="mr-2 h-4 w-4" />
+                    {t.landingPage.hero.exploreMore}
+                  </a>
                 </Button>
               </div>
             </div>
